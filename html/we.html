@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Про нас</title>
+  <link rel="stylesheet" href="we.css">
+</head>
+<body>
+  <header class="header">
+    <h1>Про нас</h1>
+  </header>
+  <main>
+    <div class="tabs">
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="tab1">Чим ми займаємося?</button>
+        <button class="tab-btn" data-tab="tab2">Історія</button>
+        <button class="tab-btn" data-tab="tab3">Команда</button>
+      </div>
+
+      <div class="tab-content active" id="tab1">
+        <h2>Чим ми займаємося?</h2>
+        <p>Наша місія — надавати найкращі товари та послуги нашим клієнтам. Ми прагнемо постійного розвитку та вдосконалення, щоб виправдати ваші очікування. Я та моя команда буде допомагати вам з вибором товару, допомогою в заннятях, та просто корисною порадою для покупки нашого товару!</p>
+      </div>
+
+      <div class="tab-content" id="tab2">
+        <h2>Історія</h2>
+        <p>Ми почали свою діяльність у 2024 році з метою створення якісного продукту для постачання нашим боксерам. З того часу мало що змінилось, але ми прагнемо до більшого! Я прагну створити свою компанію для виробництва якісних боксерських рукавиць і не тільки. Ми будемо рухатися тільки вперед до нашої цілі!.</p>
+      </div>
+
+      <div class="tab-content" id="tab3">
+        <h2>Товари</h2>
+        <p>Наші товари мають якісний матеріал та повне обстеження на різних великих компаніях України! Ми відправляймо наші товари по всій Україні без ризу втрати чи підробки. Повернення товару на протязу 14 днів є можливим!</p>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2025 Про нас. Всі права захищено.</p>
+  </footer>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        tabButtons.forEach(btn => btn.classList.remove('active'));
+        tabContents.forEach(content => content.classList.remove('active'));
+
+       
+        button.classList.add('active');
+        const tabId = button.getAttribute('data-tab');
+        document.getElementById(tabId).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

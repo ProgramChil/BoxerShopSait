@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Рукавички "ProFight"</title>
+    <link rel="stylesheet" href="ProFight.css">
+</head>
+<body>
+    <section class="product-details">
+        <div class="product-image-gallery">
+            <div class="slider">
+                <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+                <div class="images">
+                    <img src="https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/5/0/5054421118818_20-jpg/rukavici-boksers-ki-rdx-f6-matte-black-894339.jpg" alt="Фото 1">
+                    <img src="https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/5/9/5905123801457_40-jpg/rukavaci-boksers-ki-overlord-champion-chervonij-1088451.jpg" alt="Фото 2">
+                    <img src="https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/5/9/5905123801419_40-jpg/rukavaci-boksers-ki-overlord-champion-chornij-1089581.jpg" alt="Фото 3">
+                </div>
+                <button class="next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </div>
+
+        <div class="product-info">
+            <h1>Рукавички "ProFight"</h1>
+            <p class="description">Ці рукавички створені для тих, хто прагне покращити свої навички на рингу або в залі. Виготовлені з високоякісної шкіри, вони забезпечують комфорт і захист під час інтенсивних тренувань.</p>
+            <span class="price">1500 UAH</span>
+
+            <div class="product-details-additional">
+                <p><strong>Код товару:</strong> 093823</p>
+                <p><strong>Виробник:</strong> ProFight</p>
+                <p><strong>Матеріал:</strong> Високоякісна шкіра</p>
+                <p><strong>Тип:</strong> Боксерські рукавички для тренувань</p>
+            </div>
+
+            <button class="order-btn">Замовити</button>
+            <button class="contact-btn"><a href="tel:+38097610445" class="contact-btn">Зв'язатися з продавцем</a></button>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <h3>Відгуки:</h3>
+        <div class="review-item">
+            <p>⭐⭐⭐⭐⭐ "Чудові рукавички! Підходять для тривалих тренувань і не натирають." – Олександр</p>
+        </div>
+        <div class="review-item">
+            <p>⭐⭐⭐⭐⭐ "Комфортні і стильні! Ідеальний вибір для тих, хто тільки починає." – Ірина</p>
+        </div>
+        <div class="review-item">
+            <p>⭐⭐⭐⭐⭐ "Висока якість за хорошу ціну. Дуже задоволений покупкою!" – Максим</p>
+        </div>
+    </section>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll(".slider .images img");
+
+        function moveSlide(step) {
+            currentSlide += step;
+            if (currentSlide < 0) currentSlide = slides.length - 1;
+            if (currentSlide >= slides.length) currentSlide = 0;
+
+            const images = document.querySelector(".slider .images");
+            images.style.transform = `translateX(-${currentSlide * 100}%)`;
+        }
+    </script>
+</body>
+</html>
